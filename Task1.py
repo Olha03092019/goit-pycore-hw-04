@@ -1,0 +1,17 @@
+
+def total_salary(path) -> tuple[int, float]:
+    # Open and read file
+    with open(path, encoding="utf-8") as file:
+        lines = file.readlines()
+    # Retrieve records from the file
+        payments = []
+        for line in lines:
+            name, salary = line.strip().split(",")
+            payments.append(int(salary))
+    # Calculate total and average
+        total = sum(payments)
+        average = total / len(payments)
+        return total,average
+
+total, average = total_salary("salary_file")
+print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")

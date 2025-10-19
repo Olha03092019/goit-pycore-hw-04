@@ -1,4 +1,4 @@
-from colorama import Fore, Back, Style
+from colorama import Fore
 from pathlib import Path
 import sys
 
@@ -14,7 +14,7 @@ def print_dir_structure(path):
             for item in path.iterdir():
                 if item.is_dir():
                 # Вивести директорію синім кольором
-                 print(f"{Fore.BLUE}{item.name}")
+                 print(f"{Fore.BLUE}{item.name}/")
                  # Рекурсія для виводу піддиректорій
                  print_dir_structure(item)
                   # Вивести файл зеленим кольором
